@@ -38,7 +38,7 @@ public class SusLivTrac extends Application {
         // Load the FXML file
         FXMLLoader fxmlLoader = new FXMLLoader(SusLivTrac.class.getResource("signin.fxml"));
 
-        // Set up the Scenevdsv
+        // Set ucdsdp the Scenevdsv
         Scene scene = new Scene(fxmlLoader.load(), 400, 300); // Adjust the width and height as needed
         stage.setTitle("Sign In");// Set the window title
 
