@@ -43,8 +43,10 @@ public class SusLivTrac extends Application {
         stage.setTitle("Sign In");// Set the window title
 
 
-        stage.setHeight(420);
-        stage.setWidth(800);
+        stage.setWidth(600);
+        stage.setHeight(400);
+        stage.setY(300);
+        stage.setX(650);
         stage.setScene(scene);
         stage.show();
     }
