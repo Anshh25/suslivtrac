@@ -63,7 +63,7 @@ public class SignInController implements Initializable {
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(scene);
-                stage.setTitle("Home Screen");
+                stage.setTitle("Sign Up");
                 stage.show();
             }
         });
