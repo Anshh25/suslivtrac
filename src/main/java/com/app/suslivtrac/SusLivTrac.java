@@ -23,7 +23,6 @@
 //    public static void main(String[] args) {
 //        launch();
 //    }
-//}
 package com.app.suslivtrac;
 
 import javafx.application.Application;
@@ -31,27 +30,38 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 public class SusLivTrac extends Application {
+    private static Stage primaryStage; // Store primary stage for navigation
+
     @Override
     public void start(Stage stage) throws Exception {
-        // Load the FXML file
-        FXMLLoader fxmlLoader = new FXMLLoader(SusLivTrac.class.getResource("signin.fxml"));
+        primaryStage = stage; // Store the main stage
 
-        // Set ucdsdp the Scenevdsv
-        Scene scene = new Scene(fxmlLoader.load(), 400, 300); // Adjust the width and height as needed
-        stage.setTitle("Sign In");// Set the window title
+        // Load Sign-in Page Initially
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("signin.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
-
-        stage.setWidth(600);
-        stage.setHeight(400);
-        stage.setY(300);
-        stage.setX(650);
+        stage.setTitle("Sign In");
         stage.setScene(scene);
+        stage.setX(650);
+        stage.setY(300);
         stage.show();
     }
 
+    // Method to switch scenes (used by controllers)
+    public static void switchScene(String fxmlFile, String title) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(SusLivTrac.class.getResource(fxmlFile));
+            Scene scene = new Scene(fxmlLoader.load());
+
+            primaryStage.setScene(scene);
+            primaryStage.setTitle(title);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
-        launch(); // Launch the JavaFX application
+        launch(); // Launch JavaFX application
     }
 }
